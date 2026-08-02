@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // オブジェクトの変数
-    public Camera camera; // カメラ
+    public Camera CM; // カメラ
     public Transform viewPoint; // カメラの位置オブジェクト
 
     public Transform groundCheckPoint; // 地面に向けてRayを飛ばすオブジェクト
     public LayerMask groundLayers; // 地面だと認識するレイヤー
-    public Rigidbody rigidbody; // Rigidbody
+    public Rigidbody RB; // Rigidbody
 
 
     // 入力変数
@@ -43,9 +43,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        camera = Camera.main; // カメラを変数に代入
+        CM = Camera.main; // カメラを変数に代入
         viewPointStartPosition = viewPoint.transform.localPosition; // プレイヤーの視点を決めるオブジェクトを変数に代入
-        rigidbody = GetComponent<Rigidbody>(); // Rigidbodyを変数に代入
+        RB = GetComponent<Rigidbody>(); // Rigidbodyを変数に代入
         landAudioSource = GetComponent<AudioSource>(); // 足音を変数に代入
         jumpAudioSource = GetComponent<AudioSource>(); // ジャンプ音を変数に代入
     }
@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
     // プレイヤーの視点を移動先の位置と向きに反映させる処理
     void LateUpdate()
     {
-        camera.transform.position = viewPoint.position;
-        camera.transform.rotation = viewPoint.rotation;
+        CM.transform.position = viewPoint.position;
+        CM.transform.rotation = viewPoint.rotation;
     }
 
     // プレイヤーの着地判定関数
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
             // ジャンプ音を再生する
             jumpAudioSource.PlayOneShot(jumpSound);
             // 瞬間的な真上への力を加える
-            rigidbody.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            RB.AddForce(0, jumpForce, 0, ForceMode.Impulse);
         }
     }
 
