@@ -337,7 +337,6 @@ GameObject:
   - component: {fileID: -459088855762419381}
   - component: {fileID: -8407997707211549529}
   - component: {fileID: 8153479722233789275}
-  - component: {fileID: -5564975469252994170}
   m_Layer: 0
   m_Name: Zombie Monster
   m_TagString: Enemy
@@ -480,18 +479,6 @@ CapsuleCollider:
   m_Height: 2.676995
   m_Direction: 1
   m_Center: {x: 0, y: 0.8384975, z: 0}
---- !u!114 &-5564975469252994170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3142927310330352052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd64c08800968924385877887629fbe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3356754999409594133
 GameObject:
   m_ObjectHideFlags: 0
